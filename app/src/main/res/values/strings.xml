@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Sports On TV</string>
+    <string name="facebook_application_id" translatable="false">1162511400463656</string>
 </resources>

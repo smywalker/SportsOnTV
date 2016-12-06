@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.ActionMode;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -17,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     //Global variables
+    Button noSignIn;
     LoginButton loginButton;
     CallbackManager callbackManager;
 
@@ -60,3 +62,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+
+

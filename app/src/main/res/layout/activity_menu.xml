@@ -47,7 +47,8 @@
             android:layout_weight="1"
             android:onClick="onButtonClick"
             app:srcCompat="@drawable/music"
-            android:background="@drawable/com_facebook_auth_dialog_cancel_background" />
+            android:background="@drawable/com_facebook_auth_dialog_cancel_background"
+            android:id="@+id/musicButton" />
             android:text="3"
             app:srcCompat="@drawable/music"
             android:background="@drawable/com_facebook_auth_dialog_cancel_background"

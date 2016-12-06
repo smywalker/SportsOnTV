@@ -45,7 +45,9 @@
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:onClick="onButtonClick"/>
+            android:onClick="onButtonClick"
+            app:srcCompat="@drawable/music"
+            android:background="@drawable/com_facebook_auth_dialog_cancel_background" />
             android:text="3"
             app:srcCompat="@drawable/music"
             android:background="@drawable/com_facebook_auth_dialog_cancel_background"

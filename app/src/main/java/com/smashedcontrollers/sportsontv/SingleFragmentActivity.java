@@ -1,10 +1,10 @@
 package com.smashedcontrollers.sportsontv;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
+import static com.google.android.gms.internal.zzng.fm;
 public abstract class SingleFragmentActivity extends AppCompatActivity {
 
     protected abstract Fragment createFragment();
@@ -14,12 +14,12 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
 
-        FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+        FragmentManager fManager = getSupportFragmentManager();
+        Fragment fragment = fManager.findFragmentById(R.id.fragment_container);
 
         if (fragment == null) {
             fragment = createFragment();
-            fm.beginTransaction()
+            fManager.beginTransaction()
                     .add(R.id.fragment_container, fragment)
                     .commit();
         }

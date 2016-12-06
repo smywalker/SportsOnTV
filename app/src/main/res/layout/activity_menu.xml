@@ -30,7 +30,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="2"
-            app:srcCompat="@drawable/basketballButton"
+            app:srcCompat="@drawable/basketballbutton"
             android:background="@drawable/com_facebook_auth_dialog_cancel_background"
             android:id="@+id/basketBallButton" />
     </LinearLayout>
@@ -76,7 +76,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="2"
-            app:srcCompat="@drawable/chatButton"
+            app:srcCompat="@drawable/chatbutton"
             android:background="@drawable/com_facebook_auth_dialog_cancel_background"
             android:id="@+id/feedbackButton" />
     </LinearLayout>

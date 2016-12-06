@@ -36,19 +36,20 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
                 Intent loginIntent = new Intent(MainActivity.this,Menu.class);
                 startActivity(loginIntent);
-                Toast success = Toast.makeText(MainActivity.this ,"Welcome", Toast.LENGTH_LONG);
-                success.show();
+                Toast successToast = Toast.makeText(MainActivity.this ,"Welcome", Toast.LENGTH_LONG);
+                successToast.show();
             }
-            //The the user cancels the signin
+            //The the user cancels the signin process
             @Override
             public void onCancel() {
-                Toast cancel = Toast.makeText(MainActivity.this ,"Sign in Cancelled", Toast.LENGTH_SHORT);
-                cancel.show();
+                Toast cancelToast = Toast.makeText(MainActivity.this ,"Sign in Cancelled", Toast.LENGTH_SHORT);
+                cancelToast.show();
             }
-            //If there is an error when siging in
+            //If there is an error when signing in
             @Override
             public void onError(FacebookException error) {
-
+                Toast errorToast = Toast.makeText(MainActivity.this ,"Welcome", Toast.LENGTH_LONG);
+                errorToast.show();
             }
         });
     }

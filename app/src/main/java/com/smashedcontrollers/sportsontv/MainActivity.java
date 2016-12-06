@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         //set orientation
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //Facebook login
+        //Link FB login button
         loginButton = (LoginButton)findViewById(R.id.login_button);
         callbackManager = CallbackManager.Factory.create();
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    //Facebook API code for login
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode,resultCode, data);

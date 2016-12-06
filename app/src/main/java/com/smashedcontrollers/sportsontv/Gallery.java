@@ -1,13 +1,13 @@
 package com.smashedcontrollers.sportsontv;
 
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Gallery extends AppCompatActivity {
+public class Gallery extends SingleFragmentActivity{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gallery);
+    public Fragment createFragment(){
+        return GalleryFragment.newInstance();
     }
 }

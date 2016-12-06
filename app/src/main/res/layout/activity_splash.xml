@@ -14,8 +14,8 @@
     android:background="#ffffff">
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         app:srcCompat="@drawable/smashed_converted"
         android:layout_centerHorizontal="true"
         android:id="@+id/logoIV" />

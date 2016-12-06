@@ -1,5 +1,6 @@
 package com.smashedcontrollers.sportsontv;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.ActionMode;
@@ -12,19 +13,16 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
-
 public class MainActivity extends AppCompatActivity {
-
     LoginButton loginButton;
     CallbackManager callbackManager;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         loginButton = (LoginButton)findViewById(R.id.login_button);
         callbackManager = CallbackManager.Factory.create();
-
-
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -33,20 +31,17 @@ public class MainActivity extends AppCompatActivity {
                 Toast success = Toast.makeText(MainActivity.this ,"Welcome", Toast.LENGTH_LONG);
                 success.show();
             }
-
             @Override
             public void onCancel() {
                 Toast cancel = Toast.makeText(MainActivity.this ,"Sign in Cancelled", Toast.LENGTH_SHORT);
                 cancel.show();
             }
-
             @Override
             public void onError(FacebookException error) {
 
             }
         });
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode,resultCode, data);

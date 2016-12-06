@@ -33,7 +33,7 @@
         android:text="Don't Sign In"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
+        android:id="@+id/not_sign_in"
         android:layout_below="@+id/logo"
         android:layout_alignParentStart="true"
         android:layout_marginTop="27dp" />

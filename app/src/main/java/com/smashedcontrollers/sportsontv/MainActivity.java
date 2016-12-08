@@ -60,6 +60,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode,resultCode, data);
     }
+    //no sign in button method to take you to menu
+    public void onButtonClick(View view){
+        Intent nIntent = new Intent(this, Menu.class);
+        startActivity(nIntent);
+        Toast notToast = Toast.makeText(MainActivity.this ,"Welcome", Toast.LENGTH_LONG);
+        notToast.show();
+    }
+
 
 }
 

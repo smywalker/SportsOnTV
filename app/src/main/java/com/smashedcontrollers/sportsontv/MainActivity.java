@@ -67,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
         Toast notToast = Toast.makeText(MainActivity.this ,"Welcome", Toast.LENGTH_LONG);
         notToast.show();
     }
-
-
 }
 
 

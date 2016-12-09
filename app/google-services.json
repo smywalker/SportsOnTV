@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "162832806408",
-    "firebase_url": "https://fir-basic-1ed2c.firebaseio.com",
-    "project_id": "fir-basic-1ed2c",
-    "storage_bucket": "fir-basic-1ed2c.appspot.com"
+    "project_number": "116387073287",
+    "firebase_url": "https://sports-on-tv-420b6.firebaseio.com",
+    "project_id": "sports-on-tv-420b6",
+    "storage_bucket": "sports-on-tv-420b6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:162832806408:android:44dd225b9f32588c",
+        "mobilesdk_app_id": "1:116387073287:android:44dd225b9f32588c",
         "android_client_info": {
           "package_name": "com.smashedcontrollers.sportsontv"
         }
       },
       "oauth_client": [
         {
-          "client_id": "162832806408-b55jumhodc7tttba9gp77qifbbbs6lvv.apps.googleusercontent.com",
+          "client_id": "116387073287-kjp0rkldu74je96islclbtv3qqe06jnr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.smashedcontrollers.sportsontv",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "162832806408-0bfrqj7lhbu18qnlprjlcnc00uhkm94k.apps.googleusercontent.com",
+          "client_id": "116387073287-rr8qkk8d78h4jpis11pokpjo1ucgagtg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCbJVIyDBFt4-oHqQ1L69RDn8L38WJBi6Q"
+          "current_key": "AIzaSyBThCQHnD59BV3RjxMLPyz-Fabl3a0jDVY"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "162832806408-0bfrqj7lhbu18qnlprjlcnc00uhkm94k.apps.googleusercontent.com",
+              "client_id": "116387073287-rr8qkk8d78h4jpis11pokpjo1ucgagtg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

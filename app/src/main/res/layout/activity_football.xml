@@ -19,7 +19,7 @@
         android:id="@+id/textView" />
 
     <TextView
-        android:text="TextView"
+        android:text="hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"

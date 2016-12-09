@@ -22,7 +22,7 @@ public class Menu extends AppCompatActivity {
         startActivity(basketIntent);
     }
     public void onMusicClick(View view){
-        Intent musicIntent = new Intent(this,Chants.class);
+        Intent musicIntent = new Intent(this,BeatBoxActivity.class);
         startActivity(musicIntent);
     }
     public void onTubeClick(View view){

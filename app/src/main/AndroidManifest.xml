@@ -30,7 +30,7 @@
         </activity>
         <activity android:name=".Menu" />
         <activity android:name=".Gallery" />
-        <activity android:name=".Chants" />
+        <activity android:name=".BeatBoxActivity" />
         <activity android:name=".Football" />
         <activity android:name=".Basketball" />
         <activity android:name=".Tube" />

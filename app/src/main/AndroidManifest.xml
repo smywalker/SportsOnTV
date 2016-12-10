@@ -35,6 +35,11 @@
         <activity android:name=".Chants" />
         <activity android:name=".LocatrActivity" />
         <activity android:name=".Main2Activity"></activity>
+
+        <provider
+            android:authorities="com.example.plainolnotes.notesprovider"
+            android:name=".NotesProvider"
+            android:exported="false"></provider>
     </application>
 
 </manifest>

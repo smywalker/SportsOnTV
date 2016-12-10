@@ -18,7 +18,7 @@ public class Menu extends AppCompatActivity {
         startActivity(footballIntent);
     }
     public void onBasketClick(View view){
-        Intent basketIntent = new Intent(this,Basketball.class);
+        Intent basketIntent = new Intent(this,Main2Activity.class);
         startActivity(basketIntent);
     }
     public void onMusicClick(View view){
@@ -37,4 +37,18 @@ public class Menu extends AppCompatActivity {
         Intent feedbackIntent = new Intent(this,Feedback.class);
         startActivity(feedbackIntent);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

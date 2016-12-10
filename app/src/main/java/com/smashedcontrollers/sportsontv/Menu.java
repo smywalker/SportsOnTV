@@ -22,7 +22,7 @@ public class Menu extends AppCompatActivity {
         startActivity(basketIntent);
     }
     public void onMusicClick(View view){
-        Intent musicIntent = new Intent(this,BeatBoxActivity.class);
+        Intent musicIntent = new Intent(this,Chants.class);
         startActivity(musicIntent);
     }
     public void onTubeClick(View view){
@@ -30,7 +30,7 @@ public class Menu extends AppCompatActivity {
         startActivity(tubeIntent);
     }
     public void onPictureClick(View view){
-        Intent pictureIntent = new Intent(this,Gallery.class);
+        Intent pictureIntent = new Intent(this,LocatrActivity.class);
         startActivity(pictureIntent);
     }
     public void onFeedbackClick(View view){

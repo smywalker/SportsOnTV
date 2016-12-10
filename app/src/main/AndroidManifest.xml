@@ -30,11 +30,12 @@
         </activity>
         <activity android:name=".Menu" />
         <activity android:name=".Gallery" />
-        <activity android:name=".BeatBoxActivity" />
         <activity android:name=".Football" />
         <activity android:name=".Basketball" />
         <activity android:name=".Tube" />
-        <activity android:name=".Feedback"></activity>
+        <activity android:name=".Feedback" />
+        <activity android:name=".Chants" />
+        <activity android:name=".LocatrActivity"></activity>
     </application>
 
 </manifest>

@@ -10,9 +10,4 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.smashedcontrollers.sportsontv.Main2Activity">
 
-    <ListView
-        android:id="@+id/android:list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
 </RelativeLayout>

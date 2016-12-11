@@ -14,7 +14,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class Basketball extends AppCompatActivity {
-    DatabaseReference dref;
+    //declared variables
+    DatabaseReference newDatabaseRef;
     ListView newListView;
     ArrayList<String> list = new ArrayList<>();
     ArrayAdapter<String> adapter;
@@ -26,35 +27,31 @@ public class Basketball extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(this, android.R.layout.
         simple_dropdown_item_1line, list);
         newListView.setAdapter(adapter);
-        dref=FirebaseDatabase.getInstance().getReference();
-        dref.addChildEventListener(new ChildEventListener() {
+        newDatabaseRef =FirebaseDatabase.getInstance().getReference();
+        newDatabaseRef.addChildEventListener(new ChildEventListener() {
+            //When we add entry in the cloud it is added to the listview
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 String value = dataSnapshot.getValue(String.class);
                 list.add(value);
                 adapter.notifyDataSetChanged();
             }
-
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
             }
-
+            //when we remove an entry in the cloud, this makes sure it removes entry in the listview
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
                 String value = dataSnapshot.getValue(String.class);
                 list.remove(value);
                 adapter.notifyDataSetChanged();
             }
-
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
         //FirebaseDatabase database = FirebaseDatabase.getInstance();

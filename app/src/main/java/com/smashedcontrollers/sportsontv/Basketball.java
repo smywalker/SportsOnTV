@@ -16,7 +16,7 @@ public class Basketball extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
 
-        myRef.setValue(" dave beackham");
+        myRef.setValue(" dave beckham");
     }
 
 

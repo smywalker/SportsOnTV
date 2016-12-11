@@ -1,5 +1,4 @@
 package com.smashedcontrollers.sportsontv;
-
 import android.app.Activity;
 import android.graphics.Color;
 import android.hardware.Sensor;
@@ -13,8 +12,8 @@ import android.widget.Toast;
 public class Chants extends Activity implements SensorEventListener {
     //SensorManager lets you access the device's sensors
     //declare global Variables
-    private SensorManager NewSensorManager;
     RelativeLayout shaker;
+    private SensorManager NewSensorManager;
     private boolean colour = false;
     private long finalUpdate;
 
@@ -27,7 +26,7 @@ public class Chants extends Activity implements SensorEventListener {
         //Create instance of Layout
         shaker = (RelativeLayout)findViewById(R.id.rL_Accelerometer);
         //Set the colour of the background on the first entrance
-        shaker.setBackgroundColor(Color.GREEN);
+        shaker.setBackgroundColor(Color.RED);
         //create sensor manager and get system service to interact with Sensor
         NewSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         finalUpdate = System.currentTimeMillis();
@@ -41,7 +40,7 @@ public class Chants extends Activity implements SensorEventListener {
     }
     private void getAccelerometer(SensorEvent newSensorEvent) {
         float[] newValuesArray = newSensorEvent.values;
-        // Store Movement
+        // Capture Movement
         float x = newValuesArray[0];
         float y = newValuesArray[1];
         float z = newValuesArray[2];
@@ -56,7 +55,7 @@ public class Chants extends Activity implements SensorEventListener {
             }
             finalUpdate = actualTime;
             if (colour) {
-                shaker.setBackgroundColor(Color.RED);
+                shaker.setBackgroundColor(Color.YELLOW);
             } else {
                 shaker.setBackgroundColor(Color.BLUE);
             }

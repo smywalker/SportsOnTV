@@ -19,19 +19,16 @@ public class Tube extends YouTubeBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tube);
-
         //Reference the youtube view
         tubePlayerView = (YouTubePlayerView) findViewById(R.id.ytView);
         //Initialise youtube listener
         newInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override//called when initialised e.g when we play vid
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.loadVideo("IWsEWC5P-EY");//vid link
+                youTubePlayer.loadVideo("IWsEWC5P-EY");//vido link
             }
-
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-
             }
         };
         //set the button to play vid when pressed
@@ -39,7 +36,7 @@ public class Tube extends YouTubeBaseActivity {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tubePlayerView.initialize("AIzaSyAMAG_4m_o11jnsgBhe2mJ8TEtbwx7d3vo", newInitializedListener);//api key
+                tubePlayerView.initialize("AIzaSyAMAG_4m_o11jnsgBhe2mJ8TEtbwx7d3vo", newInitializedListener);//Youtube api key
             }
         });
 

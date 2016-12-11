@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.smashedcontrollers.sportsontv">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -29,13 +31,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".Menu" />
-        <activity android:name=".Gallery" />
+        <activity android:name=".Picture" />
         <activity android:name=".Football" />
         <activity android:name=".Basketball" />
         <activity android:name=".Tube" />
         <activity android:name=".Feedback" />
         <activity android:name=".Chants" />
-        <activity android:name=".LocatrActivity"></activity>
+
     </application>
 
 </manifest>

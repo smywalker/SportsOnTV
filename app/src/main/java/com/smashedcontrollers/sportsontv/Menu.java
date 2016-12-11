@@ -30,7 +30,7 @@ public class Menu extends AppCompatActivity {
         startActivity(tubeIntent);
     }
     public void onPictureClick(View view){
-        Intent pictureIntent = new Intent(this,LocatrActivity.class);
+        Intent pictureIntent = new Intent(this,Picture.class);
         startActivity(pictureIntent);
     }
     public void onFeedbackClick(View view){

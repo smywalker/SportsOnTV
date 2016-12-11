@@ -14,7 +14,7 @@ public class Menu extends AppCompatActivity {
     }
     //All the methods for the image buttons
     public void onButtonClick(View view){
-        Intent footballIntent = new Intent(this, Football.class);
+        Intent footballIntent = new Intent(this, Main2Activity.class);
         startActivity(footballIntent);
     }
     public void onBasketClick(View view){

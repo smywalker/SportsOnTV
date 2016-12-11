@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "116387073287-kjp0rkldu74je96islclbtv3qqe06jnr.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.smashedcontrollers.sportsontv",
-            "certificate_hash": "7C5812CB3068BEF80366447497104C4CBB2183EE"
-          }
-        },
-        {
           "client_id": "116387073287-rr8qkk8d78h4jpis11pokpjo1ucgagtg.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "116387073287-rr8qkk8d78h4jpis11pokpjo1ucgagtg.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

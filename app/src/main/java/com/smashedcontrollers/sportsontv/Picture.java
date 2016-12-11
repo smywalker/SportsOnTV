@@ -21,18 +21,14 @@ public class Picture  extends AppCompatActivity {
         mimageView = (ImageView) this.findViewById(R.id.image_from_camera);
         //ImageButton button = (ImageButton) this.findViewById(R.id.take_image_from_camera);
     }
-
     public void takeImageFromCamera(View view) {
         Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(cameraIntent, CAMERA_REQUEST);
     }
-
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
             Bitmap mphoto = (Bitmap) data.getExtras().get("data");
             mimageView.setImageBitmap(mphoto);
         }
     }
-
-
 }

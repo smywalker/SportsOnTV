@@ -36,7 +36,7 @@
         <activity android:name=".Tube" />
         <activity android:name=".Feedback" />
         <activity android:name=".Chants" />
-        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".Main2Activity" />
     </application>
 
 </manifest>

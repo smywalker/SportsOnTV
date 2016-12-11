@@ -7,93 +7,76 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class Chants extends Activity implements SensorEventListener {
     //SensorManager lets you access the device's sensors
-    //declare Variables
-    private SensorManager sensorManager;
-    private boolean color = false;
-    private long lastUpdate;
-    RelativeLayout rL_Accelerometer;
+    //declare global Variables
+    private SensorManager NewSensorManager;
+    RelativeLayout shaker;
+    private boolean colour = false;
+    private long finalUpdate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        //Hide Navigation and make this full screen
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chants);
         //Entrance message
         Toast.makeText(this, "Shake to Celebrate", Toast.LENGTH_SHORT).show();
         //Create instance of Layout
-        rL_Accelerometer= (RelativeLayout)findViewById(R.id.rL_Accelerometer);
-        //change background color 1st
-        rL_Accelerometer.setBackgroundColor(Color.GREEN);
-        //create instance of sensor manager and get system service to interact with Sensor
-        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        lastUpdate = System.currentTimeMillis();
+        shaker = (RelativeLayout)findViewById(R.id.rL_Accelerometer);
+        //Set the colour of the background on the first entrance
+        shaker.setBackgroundColor(Color.GREEN);
+        //create sensor manager and get system service to interact with Sensor
+        NewSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        finalUpdate = System.currentTimeMillis();
     }
-    // called when sensor value have changed
+    // method runs when the sensor parameter has changed
     @Override
-    public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            getAccelerometer(event);
+    public void onSensorChanged(SensorEvent newSensorEvent) {
+        if (newSensorEvent.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            getAccelerometer(newSensorEvent);
         }
-
     }
-
-    private void getAccelerometer(SensorEvent event) {
-        float[] values = event.values;
-        // Movement
-        float x = values[0];
-        float y = values[1];
-        float z = values[2];
-        //get acceleration
-        float accelationSquareRoot = (x * x + y * y + z * z)
-                / (SensorManager.GRAVITY_EARTH * SensorManager.GRAVITY_EARTH);
+    private void getAccelerometer(SensorEvent newSensorEvent) {
+        float[] newValuesArray = newSensorEvent.values;
+        // Store Movement
+        float x = newValuesArray[0];
+        float y = newValuesArray[1];
+        float z = newValuesArray[2];
+        //To work out get acceleration
+        float asr = (x * x + y * y + z * z)/(SensorManager.GRAVITY_EARTH * SensorManager.GRAVITY_EARTH);
         //get current time
         long actualTime = System.currentTimeMillis();
-        if (accelationSquareRoot >= 2)
+        if (asr >= 2)
         {
-            if (actualTime - lastUpdate < 200) {
+            if (actualTime - finalUpdate < 200) {
                 return;
             }
-            lastUpdate = actualTime;
-
-            if (color) {
-                rL_Accelerometer.setBackgroundColor(Color.RED);
-
+            finalUpdate = actualTime;
+            if (colour) {
+                shaker.setBackgroundColor(Color.RED);
             } else {
-                rL_Accelerometer.setBackgroundColor(Color.BLUE);
+                shaker.setBackgroundColor(Color.BLUE);
             }
-            color = !color;
+            colour = !colour;
         }
     }
-
+    //we don't need this
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
     }
-
+    //Set to listen for orientation
     @Override
     protected void onResume() {
         super.onResume();
-        // register this class as a listener for the orientation and
-        // accelerometer sensors
-        sensorManager.registerListener(this,
-                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                SensorManager.SENSOR_DELAY_NORMAL);
+        NewSensorManager.registerListener(this, NewSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),SensorManager.SENSOR_DELAY_NORMAL);
     }
-
+    //Stop listening
     @Override
     protected void onPause() {
-        // unregister listener
         super.onPause();
-        sensorManager.unregisterListener(this);
+        NewSensorManager.unregisterListener(this);
     }
 }

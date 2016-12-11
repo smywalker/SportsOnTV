@@ -2,5 +2,6 @@
     <string name="app_name">Sports On TV</string>
     <string name="facebook_app_id">1337281562950198</string>
     <string name="ready_to_code">Ready to code!</string>
+    <string name="title_activity_main3">Main3Activity</string>
 
 </resources>

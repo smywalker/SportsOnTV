@@ -2,45 +2,54 @@ package com.smashedcontrollers.sportsontv;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
-import com.smashedcontrollers.sportsontv.model.DataItem;
-import com.smashedcontrollers.sportsontv.sample.SampleDataProvider;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
 public class Main2Activity extends AppCompatActivity {
-    //private TextView tvOut;
-    List<DataItem> dataItemList = SampleDataProvider.dataItemList;
-    List<String> itemNames = new ArrayList<>();
+    //create list of names
+    private ArrayList footballTeam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
-        //Collections.sort(dataItemList, new Comparator<DataItem>() {
-           // @Override
-           // public int compare(DataItem o1, DataItem o2) {
-             //   return o1.getItemName().compareTo(o2.getItemName());
-          //  }
-       // });
-
-        for (DataItem item: dataItemList) {
-            //tvOut.append(item.getItemName()+"\n");
-            itemNames.add(item.getItemName());
-        }
-        Collections.sort(itemNames);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_list_item_1, itemNames);
-
-        ListView listView = (ListView) findViewById(android.R.id.list);
-        listView.setAdapter(adapter);
+        //call method
+        initViews();
+    }
+    private void initViews(){
+        //link objects and add data
+        RecyclerView newRecyclerView = (RecyclerView)findViewById(R.id.card_recycler_view);
+        newRecyclerView.setHasFixedSize(true);
+        //set layout manager
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        newRecyclerView.setLayoutManager(layoutManager);
+        footballTeam = new ArrayList<>();
+        //add teams to list
+        footballTeam.add("Arsenal");
+        footballTeam.add("Boro");
+        footballTeam.add("Manchester City");
+        footballTeam.add("Bounemouth");
+        footballTeam.add("Burnley");
+        footballTeam.add("Chelsea");
+        footballTeam.add("Everton");
+        footballTeam.add("Hull");
+        footballTeam.add("Leicester City");
+        footballTeam.add("Liverpool");
+        footballTeam.add("Manchester United");
+        footballTeam.add("Crystal Palace");
+        footballTeam.add("Southamptom");
+        footballTeam.add("Totternam Hotspur");
+        footballTeam.add("Stoke");
+        footballTeam.add("Sunderland");
+        footballTeam.add("Swansea");
+        footballTeam.add("Watford");
+        footballTeam.add("West Brom");
+        footballTeam.add("West Ham");
+        //link data adapter
+        RecyclerView.Adapter adapter = new DataAdapter(footballTeam);
+        newRecyclerView.setAdapter(adapter);
     }
 }

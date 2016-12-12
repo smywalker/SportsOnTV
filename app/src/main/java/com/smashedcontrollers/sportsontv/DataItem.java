@@ -1,5 +1,8 @@
-package com.smashedcontrollers.sportsontv.model;
+package com.smashedcontrollers.sportsontv;
 
+/**
+ * Created by Luke Smy on 12/12/2016.
+ */
 
 public class DataItem {
 
@@ -10,6 +13,7 @@ public class DataItem {
     private int sortPosition;
     private double price;
     private String image;
+
 
     public DataItem() {
     }
@@ -72,11 +76,11 @@ public class DataItem {
         this.price = price;
     }
 
-    public String getImages() {
+    public String getImage() {
         return image;
     }
 
-    public void setImages(String image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -93,4 +97,3 @@ public class DataItem {
                 '}';
     }
 }
-

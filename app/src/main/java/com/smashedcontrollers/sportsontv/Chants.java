@@ -1,13 +1,26 @@
 package com.smashedcontrollers.sportsontv;
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
+
+import static android.R.attr.animation;
+import static android.R.attr.start;
+import static com.smashedcontrollers.sportsontv.R.id.tVChangeBG;
 
 public class Chants extends Activity implements SensorEventListener {
     //SensorManager lets you access the device's sensors
@@ -16,6 +29,7 @@ public class Chants extends Activity implements SensorEventListener {
     private SensorManager NewSensorManager;
     private boolean colour = false;
     private long finalUpdate;
+    TextView newTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +45,24 @@ public class Chants extends Activity implements SensorEventListener {
         //create sensor manager and get system service to interact with Sensor
         NewSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         finalUpdate = System.currentTimeMillis();
+
+        newTextView = (TextView)findViewById(R.id.tVChangeBG);
+        Animation animation = AnimationUtils.loadAnimation
+                (getApplicationContext(),R.anim.splash_animation);
+        newTextView.setAnimation(animation);
+        animation.setRepeatCount(Animation.INFINITE);
+
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+            @Override
+            public void onAnimationEnd(Animation animation) {
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
     }
     // method runs when the sensor parameter has changed
     @Override

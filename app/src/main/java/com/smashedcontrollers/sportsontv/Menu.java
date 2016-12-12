@@ -20,6 +20,8 @@ public class Menu extends AppCompatActivity {
     public void onBasketClick(View view){
         Intent basketIntent = new Intent(this,Basketball.class);
         startActivity(basketIntent);
+        Toast basketToast = Toast.makeText(Menu.this ,"Fixtures", Toast.LENGTH_SHORT);
+        basketToast.show();
     }
     public void onMusicClick(View view){
         Intent musicIntent = new Intent(this,Chants.class);

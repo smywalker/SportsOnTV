@@ -3,6 +3,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -19,6 +20,8 @@ public class Tube extends YouTubeBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tube);
+        Toast newToast = Toast.makeText(Tube.this ,"Highlights", Toast.LENGTH_SHORT);
+        newToast.show();
         //Reference the youtube view
         tubePlayerView = (YouTubePlayerView) findViewById(R.id.ytView);
         //Initialise youtube listener

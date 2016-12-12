@@ -7,6 +7,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class Feedback extends AppCompatActivity {
     ProgressBar loadingProgressBar;
@@ -14,6 +15,8 @@ public class Feedback extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
+        Toast newToast = Toast.makeText(Feedback.this ,"Tickets", Toast.LENGTH_SHORT);
+        newToast.show();
         //link webview to layout object
         WebView newWebbView = (WebView)findViewById(R.id.webView);
         newWebbView.setWebViewClient(new WebViewClient());

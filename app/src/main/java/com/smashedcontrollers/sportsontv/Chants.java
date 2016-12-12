@@ -22,7 +22,8 @@ public class Chants extends Activity implements SensorEventListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chants);
         //Entrance message
-        Toast.makeText(this, "Shake to Celebrate", Toast.LENGTH_SHORT).show();
+        Toast newToast = Toast.makeText(Chants.this ,"Shake to Celebrate", Toast.LENGTH_SHORT);
+        newToast.show();
         //Create instance of Layout
         shaker = (RelativeLayout)findViewById(R.id.rL_Accelerometer);
         //Set the colour of the background on the first entrance

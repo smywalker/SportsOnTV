@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+import android.widget.Toast;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,10 +19,12 @@ public class Basketball extends AppCompatActivity {
     ListView newListView;
     ArrayList<String> list = new ArrayList<>();
     ArrayAdapter<String> adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basketball);
+        //Linked listview  and set adapter
         newListView=(ListView)findViewById(R.id.listView);
         adapter = new ArrayAdapter<String>(this, android.R.layout.
         simple_dropdown_item_1line, list);
@@ -35,6 +37,8 @@ public class Basketball extends AppCompatActivity {
                 String value = dataSnapshot.getValue(String.class);
                 list.add(value);
                 adapter.notifyDataSetChanged();
+                Toast newToast = Toast.makeText(Basketball.this ,"NEW FIXTURE ADDED", Toast.LENGTH_SHORT);
+                newToast.show();
             }
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
@@ -49,16 +53,9 @@ public class Basketball extends AppCompatActivity {
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //DatabaseReference myRef = database.getReference("message");
-
-        //myRef.setValue(" dave beckham");
     }
-
-
 }

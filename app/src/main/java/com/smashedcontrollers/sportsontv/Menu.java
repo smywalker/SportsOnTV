@@ -4,9 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+import java.io.File;
 
 public class Menu extends AppCompatActivity {
-
+    //file object to store image
+    private File imageFile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,4 +41,7 @@ public class Menu extends AppCompatActivity {
         Intent feedbackIntent = new Intent(this,Feedback.class);
         startActivity(feedbackIntent);
     }
+
+
+
 }

@@ -51,10 +51,7 @@
             android:background="@drawable/com_facebook_auth_dialog_cancel_background"
             android:id="@+id/musicButton"
             android:visibility="visible" />
-            android:text="3"
-            app:srcCompat="@drawable/music"
-            android:background="@drawable/com_facebook_auth_dialog_cancel_background"
-            android:id="@+id/musicButton" />
+
 
         <ImageButton
             android:layout_width="0dp"

@@ -1,5 +1,4 @@
 package com.smashedcontrollers.sportsontv;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -12,7 +11,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-
 public class Basketball extends AppCompatActivity {
     //declared variables
     DatabaseReference newDatabaseRef;

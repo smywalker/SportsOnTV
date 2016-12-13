@@ -45,13 +45,14 @@ public class Chants extends Activity implements SensorEventListener {
         //create sensor manager and get system service to interact with Sensor
         NewSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         finalUpdate = System.currentTimeMillis();
-
+        //linked textview
         newTextView = (TextView)findViewById(R.id.tVChangeBG);
-        Animation animation = AnimationUtils.loadAnimation
-                (getApplicationContext(),R.anim.splash_animation);
+        //Linked animation file
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.splash_animation);
         newTextView.setAnimation(animation);
+        //set animation length
         animation.setRepeatCount(Animation.INFINITE);
-
+        //set listener
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {

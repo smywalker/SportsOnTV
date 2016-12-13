@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class Feedback extends AppCompatActivity {
+    //variables
     ProgressBar loadingProgressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class Picture  extends AppCompatActivity {
-
+    //variables
     private static final int CAMERA_REQUEST = 1888;
     ImageView newImageView;
 

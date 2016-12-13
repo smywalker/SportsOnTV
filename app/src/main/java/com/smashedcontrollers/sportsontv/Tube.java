@@ -12,6 +12,7 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
 public class Tube extends YouTubeBaseActivity {
+    //Created variables
     Button play;
     private YouTubePlayerView tubePlayerView;
     private YouTubePlayer.OnInitializedListener newInitializedListener;

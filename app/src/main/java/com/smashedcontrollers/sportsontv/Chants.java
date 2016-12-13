@@ -1,26 +1,16 @@
 package com.smashedcontrollers.sportsontv;
 import android.app.Activity;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
-import static android.R.attr.animation;
-import static android.R.attr.start;
-import static com.smashedcontrollers.sportsontv.R.id.tVChangeBG;
 
 public class Chants extends Activity implements SensorEventListener {
     //SensorManager lets you access the device's sensors
@@ -72,6 +62,7 @@ public class Chants extends Activity implements SensorEventListener {
             getAccelerometer(newSensorEvent);
         }
     }
+    //This method is developed from code from  http://shaikhhamadali.blogspot.co.uk
     private void getAccelerometer(SensorEvent newSensorEvent) {
         float[] newValuesArray = newSensorEvent.values;
         // Capture Movement
